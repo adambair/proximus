@@ -1,5 +1,3 @@
 require "proximus/version"
+require "proximus/proxy"
 
-module Proximus
-  # Your code goes here...
-end
