@@ -1,3 +1,5 @@
+require "rest-client"
+
 module Proximus
   class Proxy
     def initialize(config_file = 'config/proximus.yml', env='development')
