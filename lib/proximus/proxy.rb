@@ -1,7 +1,7 @@
 module Proximus
   class Proxy
-    def initialize(config_file = 'config/proximus.yml')
-      @config   = load_config(config_file)
+    def initialize(config_file = 'config/proximus.yml', env='development')
+      @config   = load_config(config_file, env)
 
       @base_url = @config[:base_url]
       @username = @config[:username]
@@ -19,8 +19,8 @@ module Proximus
       @api[path].send method.downcase.to_sym, :cookies => {:sessionid => @sessionid}
     end
 
-    def load_config(file)
-      YAML.load_file(File.join(Rails.root, file))[Rails.env].symbolize_keys
+    def load_config(file, env)
+      YAML.load_file(file)[env].symbolize_keys
     end
 
     # AB: For history. And fun. 
