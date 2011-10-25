@@ -1,0 +1,5 @@
+= Proximus
+
+Coming Soon: This is a placeholder for an new project which proxies API calls.
+
+  def proximus_maximus_configuratus; end
