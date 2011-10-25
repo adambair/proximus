@@ -6,13 +6,14 @@ module Proximus
       @base_url = @config[:base_url]
       @username = @config[:username]
       @password = @config[:password]
+      @auth_url = @config[:auth_url]
 
       @api       = RestClient::Resource.new(@base_url)
       @sessionid = authenticate.cookies["sessionid"]
     end
 
     def authenticate
-      @api["session/"].post(:username => @username, :password => @password)
+      @api[@auth_url].post(:username => @username, :password => @password)
     end
 
     def execute(method, path)
