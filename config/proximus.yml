@@ -1,5 +1,6 @@
 development:
   base_url: http://http://ellingsonmineral.com/api/
+  auth_url: session/
   username: margo
   password: god
 
